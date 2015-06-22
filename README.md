@@ -16,7 +16,19 @@
 The process of getting down to tidy data breaks down into the following steps:
 
 ##### 1. Loading the necessary Libraries 
+The two libraries "data.table" and "reshape2" are being used that is being load at the begining of the code.
+'''
+Loading the necessary packages
+library("data.table")
+library("reshape2")
+'''
 ##### 2. Reading & merging the Data:
+
+'''
+ activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt", header = FALSE, sep = " ")[,2] 
+ features <- read.table("./UCI HAR Dataset/features.txt", header = FALSE, sep = " ")[,2]
+ features <- gsub("()", "", features)
+ '''
 ###### 2.1.Reading General data
 ###### 2.2. Reading the test data and changing the names and types
 ###### 2.3. Merging all test data
